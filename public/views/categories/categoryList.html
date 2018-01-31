@@ -1,0 +1,16 @@
+<div ng-controller="CategoryCtrl" ng-init="init()">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Categories</div>
+        <div class="panel-body">
+            <div ng-show="categories.length>0" class="list-group">
+                <a ng-repeat="c in categories" class="list-group-item">{{c.name}}</a>
+            </div>
+            <div ng-show="categories.length<1" class="alert alert-warning">
+                <strong>Warning!</strong> no categories
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,62 @@
+<div ng-controller="orderCtrl" ng-init="init()">
+    <div class="row">
+        <div class="col-sm-6">
+            <h4 class="page-header">
+                My Cart
+            </h4>
+
+            <table class="table">
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                <tr ng-repeat="(key, product) in cart.cart">
+                    <td>
+                        <img ng-src="{{product.value.image}}" width="50px" class="thumbnail" height="50px" alt="">
+                    </td>
+                    <td>{{product.value.name}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td>{{product.value.price * product.quantity}} ₪</td>
+                </tr>
+            </table>
+
+            <h3>Total Price: {{cart.total}} ₪</h3>
+        </div>
+        <div class="col-sm-6">
+            <h4 class="page-header">
+                Order
+            </h4>
+            <div class="col-sm-12">
+                <h4 class="page-header">
+                    Shipping Details:
+                </h4>
+                <div class="form-group">
+                    <label>City:</label>
+                    <select ng-model="city">
+                        <option ng-repeat="c in cities">{{c}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Street:</label>
+                    <input type="text" ng-model="street" class="form-control" ng-dblclick="dbClick()">
+                </div>
+                <div class="form-group">
+                    <label>Shipping Date:</label>
+                    <input type="date" ng-model="shippingDate" class="form-control">
+                </div>
+                <h4 class="page-header">
+                    Payment
+                </h4>
+                <div class="form-group " ng-class="!isCardValid? 'has-error has-feedback':''">
+                    <label>Credit Cart:</label>
+                    <input type="text" ng-model="creditCart" class="form-control">
+                    <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="!isCardValid"></span>
+                    <span ng-show="!isCardValid" style="color:red">Card is not valid</span>
+                </div>
+                <input type="button" ng-click="placeOrder()" class="btn btn-primary" value="Order">
+            </div>
+        </div>
+    </div>
+</div>

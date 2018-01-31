@@ -1,0 +1,13 @@
+    <div ng-controller="AuthCtrl">
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="text" ng-model="email" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" ng-model="password" class="form-control">
+        </div>
+    <input type="button" class="btn btn-primary" ng-click="login()" value="login">
+</div>
+
+<span>If you d'ont have an account please <a ui-sref="register">Register</a></span>

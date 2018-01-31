@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="MainCtrl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .navbar {
+            border-radius: 0;
+        }
+    </style>
+    <!-- JS (load angular, ui-router, and our custom js file) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/auth-controller.js"></script>
+    <script src="controllers/category-controller.js"></script>
+    <script src="controllers/home-controller.js"></script>
+    <script src="controllers/main-controller.js"></script>
+    <script src="controllers/order-controller.js"></script>
+    <script src="controllers/product-controller.js"></script>
+    <script src="controllers/store-controller.js"></script>
+    <script src="services/user-service.js"></script>
+    <script src="services/cities-service.js"></script>
+    <script src="directives/product-directive.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="#">Product Store</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="home">Home</a></li>
+        <!--<li><a ui-sref="about">About</a></li>-->
+        <li ng-show="!user"><a ui-sref="register">Register</a></li>
+        <li ng-show="!user"><a ui-sref="login">Login</a></li>
+        <li ng-show="user"><a ng-click="logout()">LogOut</a></li>
+        <li ng-show="user"><a ui-sref="store">Store</a></li>
+        <li ng-show="user"><a ui-sref="order">Order</a></li>
+        <li ng-show="user && user.role == 'admin'" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                Products
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a ui-sref="productList">List</a></li>
+                <li><a ui-sref="addProduct">Add Product</a></li>
+            </ul>
+        </li>
+        <li ng-show="user && user.role == 'admin'" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                Categories
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a ui-sref="categoryList">List</a></li>
+                <li><a ui-sref="addCategory">Add Category</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<!-- MAIN CONTENT -->
+<div class="container-fluid">
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+    <div ui-view></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<style>
+    .cart-container {
+        transition: all 2s ease;
+    }
+</style>
+<div ng-controller="ProductCtrl" ng-init="init()">
+    <div class="row">
+        <div class="col-sm-12">
+            Search a Product: <input type="text" class="form-control" ng-model="productName" style="width:200px;">
+        </div>
+    </div>
+    <div class="row">
+        <div class="cart-container" ng-class="isCartOpen? 'col-sm-4' : 'hide'">
+            <h4 class="page-header">
+                Your Cart
+            </h4>
+            <div ng-if="data.cart" ng-repeat="product in data.cart">
+                <div>
+                    <div><input type="number" ng-model="product.quantity" ng-change="updateTotal()">{{product.value.name}}
+                    </div>
+                </div>
+            </div>
+            <div>Total: {{data.total}} ₪</div>
+            <input type="button" ng-click="order()" class="btn btn-primary" value="order">
+        </div>
+        <div ng-class="isCartOpen? 'col-sm-8' : 'col-sm-12'">
+            <button style="position: absolute; top:35px;" ng-click="isCartOpen = !isCartOpen" class="btn btn-success">
+                <i class="fa fa-arrow-left" aria-hidden="true" ng-class="isCartOpen? '' : 'hide'"></i>
+                <i class="fa fa-arrow-right" aria-hidden="true" ng-class="!isCartOpen? '' : 'hide'"></i>
+            </button>
+            <h4 class="page-header" style="padding-left: 50px">Products</h4>
+            <div class="col-sm-12" style="margin: 10px 0">
+                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                    <div class="btn-group" ng-repeat="category in categories" role="group">
+                        <button type="button" class="btn btn-default" ng-click="selectCategory(category)">
+                            {{category.name}}
+                        </button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" ng-click="selectCategory(null)">All</button>
+                    </div>
+                </div>
+            </div>
+            <div ng-repeat="product in products | filter:productName | filter:selectedCategory.name">
+                <product/>
+            </div>
+            <div ng-show="products.length<1" class="alert alert-warning">
+                <strong>Warning!</strong> no categories
+            </div>
+        </div>
+    </div>
+</div>
+</div>
