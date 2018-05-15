@@ -1,0 +1,6 @@
+{"_id":{"$oid":"5a54f67cab8f3c1678cba8a8"},"name":"milk","price":12,"category":{"$oid":"5a54f178ab8f3c1678cba8a6"},"image":"https://www.hsg.co.il/gallery/3tnuva.jpg","__v":0}
+{"_id":{"$oid":"5a5889e339e7c506c4781c12"},"name":"cookies","price":5,"category":{"$oid":"5a54f178ab8f3c1678cba8a6"},"image":"https://www.meals.com/imagesrecipes/146208lrg.jpg","__v":0}
+{"_id":{"$oid":"5a588cee39e7c506c4781c14"},"name":"Bleach","price":15,"category":{"$oid":"5a588b7839e7c506c4781c13"},"image":"http://www.londondrugs.com/dw/image/v2/AAJI_PRD/on/demandware.static/-/Sites-londondrugs-master/default/dwea5ea85e/products/L7385503/large/L7385503.JPG?sw=556\u0026sh=680\u0026sm=fit","__v":0}
+{"_id":{"$oid":"5a588d5339e7c506c4781c15"},"name":"broom","price":15,"category":{"$oid":"5a588b7839e7c506c4781c13"},"image":"https://www.sinplastico.com/757-pos_large_clothes/rice-straw-broom.jpg","__v":0}
+{"_id":{"$oid":"5a588ddf39e7c506c4781c16"},"name":"cheese","price":6,"category":{"$oid":"5a54f178ab8f3c1678cba8a6"},"image":"https://dairygood.org/~/media/shared/content/2016/swiss.jpg?la=en\u0026hash=74AD4AFE07B2BE2CC16A891A0FC7DB54180CBDB7","__v":0}
+{"_id":{"$oid":"5a588e9639e7c506c4781c18"},"name":"coffee","price":25,"category":{"$oid":"5a5a2fc51546f910a84983db"},"image":"https://www.thesun.co.uk/wp-content/uploads/2017/04/nintchdbpict000319835741.jpg?strip=all\u0026w=960","__v":0}

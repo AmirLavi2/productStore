@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5a54f178ab8f3c1678cba8a6"},"name":"Dairy","__v":0}
+{"_id":{"$oid":"5a54f28eab8f3c1678cba8a7"},"name":"Meat","__v":0}
+{"_id":{"$oid":"5a588b7839e7c506c4781c13"},"name":"cleaners","__v":0}
+{"_id":{"$oid":"5a588e6739e7c506c4781c17"},"name":"drinks","__v":0}
+{"_id":{"$oid":"5a5a2fc51546f910a84983db"},"name":"Basic_products","__v":0}
